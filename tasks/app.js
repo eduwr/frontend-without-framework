@@ -36,21 +36,12 @@ const appJS = () =>
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('dist/assets/js'));
 
-const appData = () =>
-  gulp
-    .src('src/data/**/*.js')
-    .pipe(babel({ presets: ['@babel/env'] }))
-    .pipe(uglify())
-    .pipe(concat('app.data.min.js'))
-    .pipe(gulp.dest('dist/assets/data'));
-
 gulp.task('appHTML', appHTML);
 gulp.task('appCSS', appCSS);
 gulp.task('appIMG', appIMG);
 gulp.task('appJS', appJS);
 gulp.task('appIcons', appIcons);
 gulp.task('appSVG', appSVG);
-gulp.task('appData', appData);
 
 module.exports = {
   appHTML,
@@ -58,6 +49,5 @@ module.exports = {
   appIMG,
   appJS,
   appIcons,
-  appSVG,
-  appData
+  appSVG
 };

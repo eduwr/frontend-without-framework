@@ -31,8 +31,70 @@
 
   const insertCardsToWrapper = () => {
     const sliderWrapper = document.querySelector('.slider-wrapper');
-    sliderWrapper.innerHTML = images.map((image) => renderCard(image));
+    sliderWrapper.innerHTML = images.map((image) => renderCard(image)).join('');
+  };
+
+  const sliderAnimation = () => {
+    const slider = document.querySelector('.slider-wrapper');
+
+    const prevBtn = document.querySelector('#prev-btn');
+    const nextBtn = document.querySelector('#next-btn');
+
+    let counter = 0;
+    let shownPictureNumber = 3;
+
+    window.addEventListener('resize', () => {
+      counter = 0;
+      const width = window.innerWidth;
+      if (width < 900) {
+        shownPictureNumber = 1;
+        console.log('counter: ' + counter);
+        console.log('shown: ' + shownPictureNumber);
+        return;
+      }
+      shownPictureNumber = 3;
+      console.log('counter: ' + counter);
+      console.log('shown: ' + shownPictureNumber);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (
+        (shownPictureNumber === 3 && counter >= 6) ||
+        (shownPictureNumber === 1 && counter >= 8)
+      ) {
+        return;
+      }
+      const cards = document.querySelectorAll('.card');
+      const size = cards[0].clientWidth;
+
+      shownPictureNumber === 3 ? (counter = counter + 3) : counter++;
+      console.log(counter);
+      slider.style.transform = `translateX(${-size * counter}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const cards = document.querySelectorAll('.card');
+      const size = cards[0].clientWidth;
+      if (counter <= 0) {
+        counter = 0;
+        return;
+      }
+      if (counter <= 2 && shownPictureNumber === 3) {
+        counter = 0;
+      }
+      shownPictureNumber === 3 ? (counter = counter - 3) : counter--;
+      slider.style.transform = `translateX(${-size * counter}px)`;
+    });
+  };
+
+  const resolveAnimation = () => {
+    const sliderContainer = document.querySelector('#slider');
+    const shownImages = sliderContainer.clientWidth > 886 ? 3 : 1;
+    console.log('shown images: ' + shownImages);
+    console.log('pageWidht: ' + sliderContainer.clientWidth);
+    sliderAnimation(shownImages);
   };
 
   insertCardsToWrapper();
+  sliderAnimation();
 })();

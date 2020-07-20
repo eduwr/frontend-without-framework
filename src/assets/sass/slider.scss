@@ -5,7 +5,6 @@ section.slider {
   height: 500px;
   align-items: center;
   justify-content: center;
-  background-color: $grey-dark;
   padding: 20px 10px;
   overflow: hidden;
 }
@@ -16,8 +15,8 @@ section.slider {
   height: 100%;
   display: flex;
   align-items: center;
-
   width: 82vw;
+  border: none;
 
   @media (max-width: 900px) {
     width: 90vw;
@@ -29,17 +28,18 @@ section.slider {
 .slider-wrapper {
   display: flex;
   position: absolute;
-
   transition: transform 0.7s ease-in 0.1s;
+  border: none;
 
   .card {
     display: flex;
     flex: 1;
-    width: 27.333333vw;
+    width: calc(82vw / 3);
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 400px;
+    border: none;
 
     @media (max-width: 900px) {
       width: 90vw;
@@ -48,7 +48,8 @@ section.slider {
 
     img {
       min-height: 200px;
-      width: 24.6vw;
+      min-width: 80%;
+      width: 80%;
       padding: 10px;
       background-color: #6e6e6e;
       object-fit: cover;
