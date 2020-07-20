@@ -7,8 +7,7 @@ const {
   appIMG,
   appJS,
   appIcons,
-  appSVG,
-  appData
+  appSVG
 } = require('./tasks/app');
 const { watcher, server } = require('./tasks/server');
 
@@ -19,7 +18,6 @@ exports.default = series(
   appIMG,
   appIcons,
   appSVG,
-  appData,
   server,
   watcher
 );
