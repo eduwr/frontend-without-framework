@@ -5,21 +5,21 @@
   outline: 0;
   text-decoration: none;
 }
-
-html {
-  width: 100vw;
-}
-
 body {
-  background: rgb(140, 140, 140);
+  background: #bdbdbd;
   -webkit-font-smoothing: antialiased;
 }
+
 body,
 input,
 button,
 textarea {
   font-family: 'Roboto', sans-seriff;
   border: none;
+}
+
+main {
+  width: 100%;
 }
 
 h1,
@@ -29,7 +29,8 @@ h4,
 h5,
 h6,
 strong {
-  font-weight: 500;
+  font-weight: bold;
+  font-family: 'Roboto', sans-seriff;
 }
 button {
   cursor: pointer;

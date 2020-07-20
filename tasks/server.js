@@ -17,7 +17,9 @@ const watcher = (callback) => {
   watch('src/**/*.scss', () => series('appCSS')());
   watch('src/**/*.js', () => series('appJS')());
   watch('src/assets/images/**/*.*', () => series('appIMG')());
+  watch('src/assets/icons/**/*.*', () => series('appIcons')());
   watch('src/assets/svg/**/*.svg', () => series('appSVG')());
+  watch('src/data/**/*.js', () => series('appData')());
 
   return callback();
 };

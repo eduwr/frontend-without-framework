@@ -1,0 +1,110 @@
+section.carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+
+  img.carousel-panel {
+    min-width: 100%;
+    min-height: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: opacity 1s ease-in-out 0.1s;
+    opacity: 0;
+  }
+
+  img.carousel-panel.selected {
+    opacity: 1;
+  }
+
+  div.items-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    height: 250px;
+  }
+
+  div.carousel-nav {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: $grey-transparency;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      background-color: $white;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      border: 10px solid $grey-darker;
+      margin: 0 16px;
+      outline: none;
+      transition: all 1s ease-in-out 0.1s;
+    }
+
+    button.selected {
+      background-color: $green-light;
+      border-color: $white;
+    }
+  }
+}
+
+div.title-container.carousel {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  z-index: 100;
+  padding: 0 60px;
+  @media (max-width: 500px) {
+    background-color: $grey-dark;
+    height: 100px;
+  }
+
+  h1 {
+    color: $green-light;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    @media (max-width: 500px) {
+      color: $white;
+      font-size: 1.5em;
+    }
+  }
+
+  p {
+    color: $green-dark;
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: center;
+    @media (max-width: 500px) {
+      color: $white;
+      font-size: 12px;
+    }
+  }
+}
+
+button.carousel-arrow {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  @media (max-width: 500px) {
+    margin-top: 30px;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
