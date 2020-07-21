@@ -16,6 +16,4 @@ Iniciar o projeto com o comando:
 
 ### `gulp` ou `npm start`
 
-### Observações
-
-Estou enviando com a pasta dist, portanto caso não deseje instalar as dependências, basta abrir o arquivo index.html no navegador.
+> Nota: Estou enviando com a pasta dist, portanto caso não deseje instalar as dependências, basta abrir o arquivo index.html no navegador.
