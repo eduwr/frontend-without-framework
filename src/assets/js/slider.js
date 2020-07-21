@@ -48,13 +48,10 @@
       const width = window.innerWidth;
       if (width < 900) {
         shownPictureNumber = 1;
-        console.log('counter: ' + counter);
-        console.log('shown: ' + shownPictureNumber);
+
         return;
       }
       shownPictureNumber = 3;
-      console.log('counter: ' + counter);
-      console.log('shown: ' + shownPictureNumber);
     });
 
     nextBtn.addEventListener('click', () => {
@@ -68,7 +65,7 @@
       const size = cards[0].clientWidth;
 
       shownPictureNumber === 3 ? (counter = counter + 3) : counter++;
-      console.log(counter);
+
       slider.style.transform = `translateX(${-size * counter}px)`;
     });
 
@@ -85,14 +82,6 @@
       shownPictureNumber === 3 ? (counter = counter - 3) : counter--;
       slider.style.transform = `translateX(${-size * counter}px)`;
     });
-  };
-
-  const resolveAnimation = () => {
-    const sliderContainer = document.querySelector('#slider');
-    const shownImages = sliderContainer.clientWidth > 886 ? 3 : 1;
-    console.log('shown images: ' + shownImages);
-    console.log('pageWidht: ' + sliderContainer.clientWidth);
-    sliderAnimation(shownImages);
   };
 
   insertCardsToWrapper();
