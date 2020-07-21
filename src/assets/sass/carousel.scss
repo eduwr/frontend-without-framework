@@ -8,14 +8,15 @@ section.carousel {
   overflow: hidden;
   position: relative;
 
-  img {
+  .carousel-panel {
     height: 100%;
-    width: auto;
+    min-width: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
     position: absolute;
     transition: opacity 1s ease-in-out 0.1s;
     opacity: 0;
+    z-index: -10;
 
     &.selected {
       opacity: 1;
@@ -99,7 +100,7 @@ div.title-container.carousel {
 @keyframes animate-arrow {
   0% {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-10px);
   }
 
   100% {

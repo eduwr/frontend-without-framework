@@ -25,8 +25,6 @@ const appIMG = () =>
 
 const appIcons = () =>
   gulp.src('src/assets/icons/**/*.*').pipe(gulp.dest('dist/assets/icons'));
-const appSVG = () =>
-  gulp.src('src/assets/svg/**/*.*').pipe(gulp.dest('dist/assets/svg'));
 
 const appJS = () =>
   gulp
@@ -41,13 +39,11 @@ gulp.task('appCSS', appCSS);
 gulp.task('appIMG', appIMG);
 gulp.task('appJS', appJS);
 gulp.task('appIcons', appIcons);
-gulp.task('appSVG', appSVG);
 
 module.exports = {
   appHTML,
   appCSS,
   appIMG,
   appJS,
-  appIcons,
-  appSVG
+  appIcons
 };
