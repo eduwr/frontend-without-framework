@@ -12,11 +12,12 @@
 
 <body>
   <main>
-
     <section class="carousel">
+
       <img src="assets/images/landscape1.png" alt="mountains" class="carousel-panel selected">
       <img src="assets/images/landscape2.png" alt="mountains" class="carousel-panel">
       <img src="assets/images/landscape3.png" alt="mountains" class="carousel-panel">
+
       <div class="items-wrapper">
         <div class="title-container carousel">
           <h1>LOREM IPSUM</h1>
@@ -38,6 +39,7 @@
         </button>
       </div>
     </section>
+
     <section class="slider  bg-grey-dark" id="slider">
       <div class="image-slider">
         <div class="slider-wrapper">
@@ -49,7 +51,6 @@
         <button id="next-btn"><img src="assets/icons/arrowToRight.1x.png" alt="arrow to right"></button>
       </div>
     </section>
-
 
     <section class="round-image bg-grey-medium">
       <div class="round-image-container">
@@ -78,11 +79,45 @@
       </div>
     </section>
 
-    <section class="accordion">
+    <section class="accordion bg-grey-light">
+      <div class="accordion-container"></div>
+    </section>
 
+    <section class="form-container">
+      <div class="polygon">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 100">
+          <polygon points="100,100 100,0 0,100" opacity="1" />
+        </svg>
+      </div>
+      <form name="contactform" onsubmit="return validate();">
+        <div class="input-container">
+          <label for="name">*Nome:</label>
+          <input type="text" id="name" name="name" placeholder="Informe o seu nome">
+        </div>
+        <div class="grid">
+          <div class="input-container">
+            <label for="email">*Email:</label>
+            <input type="text" id="email" name="email" placeholder="Informe o seu email">
+          </div>
+          <div class="input-container">
+            <label for="phone">*Telefone:</label>
+            <input type="phone" id="phone" name="phone" placeholder="Informe o seu telefone" pattern="[0-9]{2}">
+          </div>
+        </div>
+        <div class="input-container textarea">
+          <label for="message">*Mensagem:</label>
+          <textarea type="message" id="message" name="message" placeholder="Escreva aqui."></textarea>
+        </div>
+        <button class="submit" type="submit">
+          Enviar
+        </button>
+      </form>
     </section>
 
   </main>
+  <footer class="bg-grey-darker">
+    <p class="white">LOREM IPSUM</p>
+  </footer>
   <script src="assets/js/app.min.js"></script>
 </body>
 

@@ -2,24 +2,24 @@ section.carousel {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
 
-  img.carousel-panel {
-    min-width: 100%;
-    min-height: 100%;
+  img {
     height: 100%;
+    width: auto;
     object-fit: cover;
     background-repeat: no-repeat;
     position: absolute;
     transition: opacity 1s ease-in-out 0.1s;
     opacity: 0;
-  }
 
-  img.carousel-panel.selected {
-    opacity: 1;
+    &.selected {
+      opacity: 1;
+    }
   }
 
   div.items-wrapper {
@@ -96,10 +96,26 @@ div.title-container.carousel {
   }
 }
 
+@keyframes animate-arrow {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 button.carousel-arrow {
   display: inline-block;
   width: 50px;
   height: 50px;
+  animation-name: animate-arrow;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
   @media (max-width: 500px) {
     margin-top: 30px;
   }

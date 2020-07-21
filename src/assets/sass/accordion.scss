@@ -1,0 +1,92 @@
+section.accordion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+  width: 100%;
+  overflow: hidden;
+}
+
+div.accordion-container {
+  width: 100%;
+  flex-direction: column;
+  margin: 50px 7vw;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: $grey-medium;
+  @media (max-width: 730px) {
+    margin: 16px 10px;
+  }
+}
+
+button.clickable-item {
+  height: 80px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $grey-light;
+  color: $white;
+  background-color: $grey-medium;
+  transition: 0.5s;
+  h3 {
+    font-size: 16px;
+    margin-left: 28px;
+    font-weight: bold;
+    color: inherit;
+  }
+  img {
+    height: 25px;
+    width: 25px;
+    margin-right: 28px;
+  }
+  &:hover {
+    background-color: $white-transparency;
+  }
+  &.selected {
+    background-color: $white;
+    border-color: $white;
+    color: $grey-medium;
+  }
+}
+
+div.item-content {
+  display: none;
+  background-color: $white;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+
+  @media (max-width: 730px) {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  &.selected {
+    display: flex;
+  }
+
+  img {
+    padding: 10px;
+    background-color: #6e6e6e;
+    width: 320px;
+    height: 220px;
+    src: url('assets/icons/arrowDownWhite.1x.png');
+    @media (max-width: 730px) {
+      min-width: 260px;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  p {
+    color: #6e6e6e;
+    margin-left: 28px;
+    text-align: left;
+
+    @media (max-width: 730px) {
+      margin: 18px;
+      text-align: center;
+    }
+  }
+}
